@@ -1,0 +1,45 @@
+<html>
+<head>
+    <title>Login</title>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+<body>
+<h1> Login </h1>
+<div>
+    <h1><a href="/">Home</a></h1>
+</div>
+<div>
+    <h2><a href="/brokenAuth">Back to broken Authentication</a></h2>
+</div>
+<div>
+    <h3>Kada se označi checkbox, aplikcaija je ranjiva, reCAPTCHA će i dalje biti prikazano no nije ju potrebno označiti.</h3>
+    <h3>Dok checkbox nije označen, onda ćete i Vi morati označiti reCAPTCHA-u, u protivnom ste robot!</h3>
+</div>
+<form action="/brokenAuth/loginUser" method="POST">
+    <div>
+        <label for="check1">Enable vulnerability</label>
+        <input type="checkbox" id="vulnerability" name="vulnerability"/>
+    </div>
+    <div>
+        <label for="email">Email</label>
+        <input
+                type="email"
+                name="email"
+                placeholder="Enter Email"
+        />
+    </div>
+    <div>
+        <label for="password">Password</label>
+        <input
+                type="password"
+                name="password"
+                placeholder="Enter Password"
+        />
+    </div>
+    <div class="g-recaptcha"
+         data-sitekey="6Lf2m5kdAAAAANtaOUhxL9eBdq96CtRRh47t7Yew">
+    </div>
+    <button type="submit" class="btn btn-primary btn-block">Login</button>
+</form>
+</body>
+</html>

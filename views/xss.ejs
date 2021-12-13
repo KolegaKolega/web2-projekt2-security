@@ -1,0 +1,23 @@
+<html>
+<head>
+    <title>XSS</title>
+</head>
+<h1>XSS</h1>
+<div>
+    <h1><a href="/">Home</a></h1>
+</div>
+<form action="/xss/comments" method="post">
+    <div>
+        <label for="check1">Enable vulnerability</label>
+        <input type="checkbox" id="vulnerability" name="vulnerability"/>
+    </div>
+    <h2>Post a comment</h2>
+    <input type="text" id="comment" name="comment" placeholder="Comment.." style="width: 500px; height: 300px">
+
+    <div>
+        <br/>
+        <button type="submit" style="width: 200px; height: 50px">Post</button>
+    </div>
+
+</form>
+</html>
