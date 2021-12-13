@@ -119,8 +119,11 @@ app.post('/xss/comments', function (req,res){
 });
 
 const hostname = '127.0.0.1';
-const port = 4010;
-const server = http.createServer(app)
-server.listen(port, hostname, () => {
-    console.log(`Server running at http://${hostname}:${port}/`);
-});
+const port = process.env.PORT || 4010;
+if(process.env.PORT){
+    app.listen(port, () => console.log('Server running!'))
+}else{
+    app.listen(port, hostname, () => {
+        console.log(`Server running at http://${hostname}:${port}/`);
+    });
+}
